@@ -28,13 +28,15 @@ export class MovieService {
 
   private handleError(error: HttpErrorResponse) {
     if (error.status === 400) {
-      return throwError('Bad request.');
-    } else if (error.status === 403) {
-      return throwError('Access denied.');
+      return throwError('Faltan datos');
+    }  else if (error.status === 401) {
+      return throwError('No autorizado');
+    }  else if (error.status === 403) {
+      return throwError('Acceso denegado.');
     } else if (error.status === 500) {
-      return throwError('Internal server error.');
+      return throwError('Error en el servidor.');
     } else {
-      return throwError('An unknown error occurred.');
+      return throwError('Error desconocido.');
     }
   }
 
