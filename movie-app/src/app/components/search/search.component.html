@@ -1,0 +1,12 @@
+@if(errorMessage !== ''){
+    <div class="error">{{ errorMessage }}</div>
+} @else {
+    <h1>Search</h1>
+    <input [(ngModel)]="title" placeholder="Buscar películas..." type="text" />
+    <button (click)="searchMovies()">Buscar</button>
+    @for(movie of movies; track $index)
+    {
+        <p>{{ movie.title }} ({{ movie.year }}) ({{ movie.type }})</p>    
+    }
+}
+

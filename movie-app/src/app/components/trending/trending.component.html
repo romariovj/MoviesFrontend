@@ -1,0 +1,10 @@
+@if(errorMessage !== ''){
+    <div class="error">{{ errorMessage }}</div>
+} @else {
+    <h1>Trending</h1>
+    @for(movie of movies; track $index)
+    {
+        <p>{{ movie.title }} ({{ movie.year }})</p>    
+    }
+}
+

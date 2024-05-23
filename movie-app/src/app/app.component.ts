@@ -1,5 +1,12 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { DOCUMENT } from '@angular/common';
+import { Component, ElementRef, HostListener, Inject, OnInit, Renderer2 } from '@angular/core';
+import { NavigationEnd, Route, Router, RouterOutlet } from '@angular/router';
+import { Subscription, filter } from 'rxjs';
+
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = 0;
 
 @Component({
   selector: 'app-root',
@@ -10,4 +17,6 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'movie-app';
+
+
 }
